@@ -1,0 +1,34 @@
+// transform(upperGreeting.begin(), upperGreeting.end(), upperGreeting.begin(), ::toupper); 
+/*
+upperGreeting.begin(): This is an iterator pointing to the start of the string upperGreeting.
+upperGreeting.end(): This is an iterator pointing just past the end of the string upperGreeting.
+upperGreeting.begin() (third argument): This specifies the start of the destination range where the transformed characters will be stored. In this case, the destination is the same as the source, so the original string will be modified in place.
+::toupper: This is a function pointer to the toupper function from the C++ standard library, which converts a single character to uppercase.
+*/
+#include <iostream>
+#include <string>  // For using string functions
+#include <algorithm>  // For using transform function
+using namespace std;
+
+// Function to print the greeting
+void printGreeting(const string& name) {
+
+    // Convert the greeting to uppercase
+    string upperGreeting = "Hello, " + name + "!";
+
+    // converts the string to uppercase
+    transform(upperGreeting.begin(), upperGreeting.end(), upperGreeting.begin(), ::toupper);
+
+    // Print the final result
+    cout <<"Final Result: "<< upperGreeting;
+}
+
+int main() {
+    // The name to be used in the greeting
+    string name = "Alice";
+    
+    printGreeting(name);
+
+
+    
+}
